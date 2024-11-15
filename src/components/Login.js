@@ -1,6 +1,10 @@
 import React, { useRef, useState } from "react";
 import Header from "./Header";
 import { checkValidData } from "../utils/validate";
+import {createUserWithEmailAndPassword,signInWithEmailAndPassword } from "firebase/auth";
+import {auth} from "../utils/firebase";
+import { navigate, useNavigate } from "react-router-dom";
+
 
 const Login = () => {
 
@@ -8,21 +12,63 @@ const Login = () => {
 
   const [errorMessage,seterrorMessage] = useState(null);
 
+  const navigate = useNavigate();
+
   const email = useRef(null);
   const password = useRef(null);
 
   const handleButtonClick = ()=>{
-    console.log(email.current.value);
-    console.log(password.current.value);
 
-    const res = checkValidData(email.current.value,password.current.value)
+    const message = checkValidData(email.current.value,password.current.value)
+    seterrorMessage(message);
 
-    // console.log(res);
-    
+    if(message) return;
 
-    // email.
+    if(!IsSign)
+    {
 
-    seterrorMessage(res);
+      // sign 
+      
+      createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
+      .then((userCredential) => {
+        // Signed up 
+        const user = userCredential.user;
+        console.log('------>>>>',user);
+        navigate("/browse")
+
+        
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        seterrorMessage(errorCode +'---'+ errorMessage);
+        // ..
+      });
+
+
+    }
+    else{
+      // sign in
+
+      signInWithEmailAndPassword(auth,email.current.value,password.current.value)
+        .then((userCredential) => {
+          // Signed in 
+          const user = userCredential.user;
+          console.log('------>>>>',user);
+          navigate("/browse")
+
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+
+          seterrorMessage(errorCode +'---'+ errorMessage);
+
+        });
+
+    }
     
     
   }

@@ -27,4 +27,6 @@ it will create build folder which tell firebase to deploy using build folder
 
 4. firebase deploy => this command will deploy our project on firebase
 
+- Create signup user account in firebase
+
 
