@@ -11,6 +11,7 @@ Planning about netflix gpt project :-
 - Validate Function
 - Google firebase for backend`
 
+
 firebase set up
 npm install firebase
 npm install -g firebase-tools  => command to install firebase CLI
@@ -28,5 +29,25 @@ it will create build folder which tell firebase to deploy using build folder
 4. firebase deploy => this command will deploy our project on firebase
 
 - Create signup user account in firebase
+
+- implement sign in user account
+- create redux store with userSlice
+- Implemented sign out 
+- update profile
+- bugfix- sign up user displayname and profile picture update
+- bugfix- if the user  is not logged in redirect /browser to login page and vice-versa
+- unsubscribe to the onAuthStateChanged callback
+
+
+
+@ ----     flowchart app flow netflix gpt  ----
+
+index.js
+app.js
+body.js
+login.js / browse.js
+header.js
+
+
 
 
