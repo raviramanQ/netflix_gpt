@@ -5,6 +5,7 @@ import {createUserWithEmailAndPassword,signInWithEmailAndPassword,updateProfile 
 import {auth} from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import {IMG_LOGIN_LOGO_URL,LOGIN_URL} from "../utils/constant";
 
 
 const Login = () => {
@@ -37,7 +38,7 @@ const Login = () => {
         const user = userCredential.user;
         updateProfile(user, {
           displayName: name.current.value,
-          photoURL: "https://www.vimarshaias.com/wp-content/uploads/2024/04/IPS.jpg"
+          photoURL: {LOGIN_URL}
         }).then(() => {
 
           console.log('==0--------------->>>>>>????',auth);
@@ -111,7 +112,7 @@ const Login = () => {
      <Header/>
       {/* background image for netflix */}
      <div className="absolute">
-     <img src="https://assets.nflxext.com/ffe/siteui/vlv3/151f3e1e-b2c9-4626-afcd-6b39d0b2694f/web/IN-en-20241028-TRIFECTA-perspective_bce9a321-39cb-4cce-8ba6-02dab4c72e53_small.jpg" alt="logo"/>
+     <img src={IMG_LOGIN_LOGO_URL} alt="logo"/>
      </div>
 
     <form onSubmit={(e)=>e.preventDefault()} className="w-3/12 absolute p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80">
