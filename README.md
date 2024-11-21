@@ -39,8 +39,7 @@ it will create build folder which tell firebase to deploy using build folder
 - unsubscribe to the onAuthStateChanged callback
 
 
-
-@ ----     flowchart app flow netflix gpt  ----
+@ ----     flowchart app flow netflix gpt    ---- @
 
 index.js
 app.js

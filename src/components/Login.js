@@ -36,9 +36,15 @@ const Login = () => {
       .then((userCredential) => {
         // Signed up 
         const user = userCredential.user;
+
+console.log('currnt valL======>>>>>>>',name.current.value);
+console.log('loginULL======>>>>>>>',LOGIN_URL);
+
+
+
         updateProfile(user, {
           displayName: name.current.value,
-          photoURL: {LOGIN_URL}
+          photoURL: LOGIN_URL
         }).then(() => {
 
           console.log('==0--------------->>>>>>????',auth);
@@ -48,7 +54,9 @@ const Login = () => {
 
 
 
-          console.log('======>>>>>PPPPP____',photoURL);
+          console.log('======>>>>>PPPPP--displayname---->>>>>>>',displayName);
+          console.log('======>>>>>PPPPP--photourl____::::::::',photoURL);
+
 
 
           dispatch(
@@ -62,6 +70,9 @@ const Login = () => {
           // Profile updated!
           // ...
         }).catch((error) => {
+
+          console.log(error);
+          
          seterrorMessage(error.message)
         });
         console.log('------>>>>',user);
