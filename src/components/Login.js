@@ -14,7 +14,7 @@ const Login = () => {
 
   const [errorMessage,seterrorMessage] = useState(null);
 
-  const dispatch = useDispatch
+  const dispatch = useDispatch();
 
   const name = useRef(null);
   const email = useRef(null);
@@ -37,27 +37,12 @@ const Login = () => {
         // Signed up 
         const user = userCredential.user;
 
-console.log('currnt valL======>>>>>>>',name.current.value);
-console.log('loginULL======>>>>>>>',LOGIN_URL);
-
-
-
         updateProfile(user, {
           displayName: name.current.value,
           photoURL: LOGIN_URL
-        }).then(() => {
-
-          console.log('==0--------------->>>>>>????',auth);
-          
+        }).then(() => {          
 
           const {uid,email,displayName,photoURL} = auth.currentUser;
-
-
-
-          console.log('======>>>>>PPPPP--displayname---->>>>>>>',displayName);
-          console.log('======>>>>>PPPPP--photourl____::::::::',photoURL);
-
-
 
           dispatch(
             addUser({
@@ -70,13 +55,9 @@ console.log('loginULL======>>>>>>>',LOGIN_URL);
           // Profile updated!
           // ...
         }).catch((error) => {
-
-          console.log(error);
           
          seterrorMessage(error.message)
         });
-        console.log('------>>>>',user);
-
         
         // ...
       })
@@ -96,7 +77,7 @@ console.log('loginULL======>>>>>>>',LOGIN_URL);
         .then((userCredential) => {
           // Signed in 
           const user = userCredential.user;
-          console.log('------>>>>',user);
+          // console.log('------>>>>',user);
 
           // ...
         })
@@ -140,7 +121,7 @@ console.log('loginULL======>>>>>>>',LOGIN_URL);
      
     <button className="p-4 my-6 bg-red-700 w-full rounded-lg" onClick = {handleButtonClick} >{IsSign?'Sign In':'Sign Up'}</button>
    
-    <span className="text-gray-400">New to Netflix? <span className="text-white cursor-pointer" onClick = {toggleSignInForm}>{IsSign? 'Sign in now' :'Sign up now'}.</span></span>
+    <span className="text-gray-400">New to Netflix? <span className="text-white cursor-pointer" onClick = {toggleSignInForm}>{IsSign? 'Sign up now' :'Sign in now'}.</span></span>
 
     <p className="py-4 text-gray-600">This page is protected by Google reCAPTCHA to ensure you're not a bot</p>
      

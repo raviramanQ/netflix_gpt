@@ -12,7 +12,7 @@ const Header = () => {
   const navigate = useNavigate();
   const user = useSelector(store => store.user);
 
-  console.log('-------->>>>>>>',user);
+  // console.log('-------->>>>>>>',user);
   
 
   const handleSignOut = ()=>{
@@ -30,11 +30,11 @@ const Header = () => {
   useEffect(()=>{
      const unsubscribe = onAuthStateChanged(auth, (user) => {
        if (user) {
-       console.log('======>>>>>meena',user);
+      //  console.log('======>>>>>meena',user);
        
          const {uid,email,displayName,photoURL} = user;
 
-         console.log('======>>>>>PPPPP____',photoURL);
+        //  console.log('======>>>>>PPPPP____',photoURL);
 
 
          dispatch(addUser({uid:uid,email:email,displayName:displayName,photoURL:photoURL}));
@@ -59,7 +59,7 @@ const Header = () => {
     <div className='absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between'>
       <img className='w-44' 
       src={LOGO_URL} alt=""/>
-      {console.log('------------------?????',user)
+      {console.log('userheaderpage-------------->>>>>>>>>',user)
       }
 
       {user && (
