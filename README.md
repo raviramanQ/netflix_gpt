@@ -37,6 +37,10 @@ it will create build folder which tell firebase to deploy using build folder
 - bugfix- sign up user displayname and profile picture update
 - bugfix- if the user  is not logged in redirect /browser to login page and vice-versa
 - unsubscribe to the onAuthStateChanged callback
+- Add hardcoded value of the constant files.
+- Register TMDB API & create an app & get access token
+- Get Data from TMDB now playing movies list API
+- MoviesSlice add movies in store
 
 
 @ ----     flowchart app flow netflix gpt    ---- @
