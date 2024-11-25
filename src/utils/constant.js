@@ -5,10 +5,3 @@ export const IMG_LOGIN_LOGO_URL = "https://assets.nflxext.com/ffe/siteui/vlv3/15
 
 export const LOGIN_URL = "https://lovinglifeco.com/wp-content/uploads/2023/06/self-awareness-written-on-a-notepad.jpg";
 
-export const API_OPTIONS = {
-   method: 'GET',
-   headers: {
-     accept: 'application/json',
-     Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNGQwMzliOGM5N2RiNzQ1M2EwMzJiYTg1NmMyMjhjOSIsIm5iZiI6MTczMjM3NjY5MC42OTAyNDMsInN1YiI6IjY3NDFlNTE0N2I4MjVlNjg1YjRlNTc0MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.EHdRdjsMjbl6PSonuSTe9p74JLhj3ZV8T8Jn0ke2XTg'
-   }
- };
