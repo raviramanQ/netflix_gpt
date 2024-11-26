@@ -5,3 +5,11 @@ export const IMG_LOGIN_LOGO_URL = "https://assets.nflxext.com/ffe/siteui/vlv3/15
 
 export const LOGIN_URL = "https://lovinglifeco.com/wp-content/uploads/2023/06/self-awareness-written-on-a-notepad.jpg";
 
+
+export const API_OPTIONS = {
+   method: 'GET',
+   headers: {
+     accept: 'application/json',
+     Authorization: 'Bearer '
+   }
+ };
