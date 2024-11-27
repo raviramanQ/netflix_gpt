@@ -41,6 +41,14 @@ it will create build folder which tell firebase to deploy using build folder
 - Register TMDB API & create an app & get access token
 - Get Data from TMDB now playing movies list API
 - MoviesSlice add movies in store
+- custom hook for now playing movie
+- create movielist
+- update store with movie Data
+- planning for MainContainer & secondary container
+- fetch Data for tailer video
+- update store with trailer video data
+- embedded the youtube video and make it autoplay and mute
+- tailwind classes to make main container look awesome
 
 
 @ ----     flowchart app flow netflix gpt    ---- @
