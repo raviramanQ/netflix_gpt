@@ -49,6 +49,13 @@ it will create build folder which tell firebase to deploy using build folder
 - update store with trailer video data
 - embedded the youtube video and make it autoplay and mute
 - tailwind classes to make main container look awesome
+- Build secondary component
+- Build movie list
+- build movie card
+- TMDB Image CDN URL
+- made browser page mazing tailwind css
+- usePopular movie custom hook
+
 
 
 @ ----     flowchart app flow netflix gpt    ---- @
