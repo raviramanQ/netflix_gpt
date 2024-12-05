@@ -5,12 +5,11 @@ export const IMG_LOGIN_LOGO_URL = "https://assets.nflxext.com/ffe/siteui/vlv3/15
 
 export const LOGIN_URL = "https://occ-0-3647-395.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABXz4LMjJFidX8MxhZ6qro8PBTjmHbxlaLAbk45W1DXbKsAIOwyHQPiMAuUnF1G24CLi7InJHK4Ge4jkXul1xIW49Dr5S7fc.png?r=e6e";
 
-
 export const API_OPTIONS = {
   method: 'GET',
   headers: {
     accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ6.eyJhdWQiOiIxNGQwMzliOGM5N2RiNzQ1M2EwMzJiYTg1NmMyMjhjOSIsIm5iZiI6MTczMjM3NjY5MC42OTAyNDMsInN1YiI6IjY3NDFlNTE0N2I4MjVlNjg1YjRlNTc0MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.EHdRdjsMjbl6PSonuSTe9p74JLhj3ZV8T8Jn0ke2XTg'
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNGQwMzliOGM5N2RiNzQ1M2EwMzJiYTg1NmMyMjhjOSIsIm5iZiI6MTczMjM3NjY5MC42OTAyNDMsInN1YiI6IjY3NDFlNTE0N2I4MjVlNjg1YjRlNTc0MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.EHdRdjsMjbl6PSonuSTe9p74JLhj3ZV8T8Jn0ke2XTg'
   }
 };
 
