@@ -5,7 +5,8 @@ import { useDispatch,useSelector } from 'react-redux';
 import { addUser,removeUser } from '../utils/userSlice';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import {LOGO_URL} from '../utils/constant';
+import {LOGO_URL, SUPPORTED_LANGUAGES} from '../utils/constant';
+import { toggleGptSearchView } from '../utils/gptSlice';
 
 const Header = () => {
 
@@ -25,6 +26,11 @@ const Header = () => {
     });
 
   };
+
+  const handleGptSearchClick = ()=>{
+     dispatch(toggleGptSearchView());
+  }
+
   const dispatch = useDispatch();
 
   useEffect(()=>{
@@ -62,13 +68,17 @@ const Header = () => {
      
       {user && (
 
-      <div className='flex p-2'>
-        <img 
-        className='w-12 h-12'
-        alt = "usericon"
-        src= {user?.photoURL} />
-        <button onClick={handleSignOut} className='font-bold text-white'>(Sign Out)</button>
-      </div>
+<div className="flex items-center p-2">
+  <select className='p-2 m-2 bg-gray-900 text-white'>
+    {SUPPORTED_LANGUAGES.map(lang => <option key={lang.identifier} value={lang.identifier}>{lang.name}</option>)}
+  </select>
+<button onClick={handleGptSearchClick} className="py-2 px-2 m-2 bg-purple-700">GPT Search</button>
+<img className="w-12 h-10 m-2" alt="usericon" src={user?.photoURL} />
+<button onClick={handleSignOut} className="font-bold text-white m-2">
+  (Sign Out)
+</button>
+</div>
+
       )}
 
     </div>
