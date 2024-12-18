@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {LOGO_URL, SUPPORTED_LANGUAGES} from '../utils/constant';
 import { toggleGptSearchView } from '../utils/gptSlice';
+import { changeLanguage } from '../utils/configSlice';
 
 const Header = () => {
 
@@ -30,6 +31,10 @@ const Header = () => {
   const handleGptSearchClick = ()=>{
      dispatch(toggleGptSearchView());
   }
+
+  const handleLangChange = (e)=>{
+    dispatch(changeLanguage(e.target.value));
+  };
 
   const dispatch = useDispatch();
 
@@ -69,7 +74,7 @@ const Header = () => {
       {user && (
 
 <div className="flex items-center p-2">
-  <select className='p-2 m-2 bg-gray-900 text-white'>
+  <select className='p-2 m-2 bg-gray-900 text-white' onChange={handleLangChange}>
     {SUPPORTED_LANGUAGES.map(lang => <option key={lang.identifier} value={lang.identifier}>{lang.name}</option>)}
   </select>
 <button onClick={handleGptSearchClick} className="py-2 px-2 m-2 bg-purple-700">GPT Search</button>
